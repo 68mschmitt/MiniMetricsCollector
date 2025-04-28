@@ -12,7 +12,8 @@ public class ConsoleOutput : IOutput
 
         foreach (var metric in metrics)
         {
-            Console.WriteLine($"{metric.Name}: {metric.Value} {metric.Unit}");
+            var result = $"{metric.Value,11:F} {metric.Unit}";
+            Console.WriteLine($"{metric.Name,-33}: {result,11}");
         }
 
         return Task.CompletedTask;
